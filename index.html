@@ -8,67 +8,72 @@
 </head>
 <body>
 
-    <div class="org-tree">
-        <!-- NIVEL 1: CEO -->
-        <div class="node">
-            <div class="card">
-                <img src="martin.jpg" class="avatar" alt="Martín Barbero">
-                <h2>Martín Barbero</h2>
-                <p>CEO & FOUNDER</p>
-                <button onclick="toggleTeam(this)">▲ Contraer equipo</button>
+<div class="org-tree">
+    <!-- NIVEL 1: CEO -->
+    <div class="node root">
+        <div class="card">
+            <img src="martin.jpg" class="avatar" alt="Martín Barbero">
+            <h2>Martín Barbero</h2>
+            <p>CEO & FOUNDER</p>
+            <button onclick="toggleTeam(this)">▲ Contraer equipo</button>
+        </div>
+
+        <!-- NIVEL 2: Diego, Áreas, Cristina -->
+        <div class="children">
+            <!-- Diego Barbero -->
+            <div class="node">
+                <div class="card">
+                    <img src="diego.jpg" class="avatar" alt="Diego Barbero">
+                    <h3>Diego Barbero</h3>
+                    <p>VP Business Dev</p>
+                    <div class="tag bg-dir">Dirección</div>
+                </div>
             </div>
 
-            <!-- NIVEL 2 (Orden: Diego, Áreas, Cristina) -->
-            <div class="children">
-                
-                <!-- 1. Diego Barbero -->
-                <div class="node">
-                    <div class="card">
-                        <img src="diego.jpg" class="avatar" alt="Diego Barbero">
-                        <h3>Diego Barbero</h3>
-                        <p>VP Business Dev</p>
-                        <div class="tag bg-dir">Dirección</div>
+            <!-- Áreas con equipo expandible -->
+            <div class="node">
+                <div class="card">
+                    <h3>Áreas</h3>
+                    <img src="areas.jpg" class="avatar" alt="Logo Xtendo">
+                    <p>Equipo operativo</p>
+                    <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
+                </div>
+                <div class="children hidden">
+                    <div class="node">
+                        <div class="card">
+                            <h4>Tecnología</h4>
+                            <div class="tag bg-tech">Tecnología</div>
+                        </div>
+                    </div>
+                    <div class="node">
+                        <div class="card">
+                            <h4>Ventas</h4>
+                            <div class="tag bg-sales">Ventas</div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 2. Áreas -->
-                <div class="node">
-                    <div class="card">
-                        <h3>Áreas</h3>
-                        <img src="diego.jpg" class="avatar" alt="Logo Xtendo">
-                        <p>Equipo operativo</p>
-                        <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
-                    </div>
-                    <div class="children hidden">
-                        <div class="node"><div class="card"><h4>Tecnología</h4><div class="tag bg-tech">Tecnología</div></div></div>
-                        <div class="node"><div class="card"><h4>Ventas</h4><div class="tag bg-sales">Ventas</div></div></div>
-                    </div>
+            <!-- Cristina Muriel con equipo expandible -->
+            <div class="node">
+                <div class="card">
+                    <img src="cristina.jpg" class="avatar" alt="Cristina Muriel">
+                    <h3>Cristina Muriel</h3>
+                    <p>VP Global Growth</p>
+                    <div class="tag bg-dir">Dirección</div>
+                    <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
                 </div>
-
-                <!-- 3. Cristina Muriel (Con equipo anidado) -->
-                <div class="node">
-                    <div class="card">
-                        <img src="cristina.jpg" class="avatar" alt="Cristina Muriel">
-                        <h3>Cristina Muriel</h3>
-                        <p>VP Global Growth</p>
-                        <div class="tag bg-dir">Dirección</div>
-                        <p></p>
-                        <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
-                    </div>
-                    
-                    <!-- Equipo de Cristina -->
-                    <div class="children hidden">
-                        <div class="node"><div class="card"><h4>BDR 1 Global</h4><p>Jeff Alvarez</p></div></div>
-                        <div class="node"><div class="card"><h4>BDR 2 Global</h4><p>TBH</p></div></div>
-                        <div class="node"><div class="card"><h4>SDR 1 Global</h4><p>TBH</p></div></div>
-                        <div class="node"><div class="card"><h4>SDR 2 Global</h4><p>TBH</p></div></div>
-                    </div>
+                <div class="children hidden">
+                    <div class="node"><div class="card"><h4>BDR 1 Global</h4><p>Jeff Alvarez</p></div></div>
+                    <div class="node"><div class="card"><h4>BDR 2 Global</h4><p>TBH</p></div></div>
+                    <div class="node"><div class="card"><h4>SDR 1 Global</h4><p>TBH</p></div></div>
+                    <div class="node"><div class="card"><h4>SDR 2 Global</h4><p>TBH</p></div></div>
                 </div>
-
             </div>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
