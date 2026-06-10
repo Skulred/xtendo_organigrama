@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Organigrama Xtendo</title>
+    <style>
+        /* CSS para el efecto de abrir/cerrar */
+        body { font-family: sans-serif; background: #f4f4f9; padding: 20px; }
+        details { background: white; padding: 10px; margin: 5px; border-radius: 8px; cursor: pointer; border: 1px solid #ddd; }
+        summary { font-weight: bold; }
+        .node { margin-left: 20px; border-left: 2px solid #1a3a5a; padding-left: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Organigrama Xtendo</h1>
+    <div id="org-root">
+        <details>
+            <summary>Martin Barbero - CEO & FOUNDER</summary>
+            <div class="node">
+                <details>
+                    <summary>Brasil Sales Team</summary>
+                    <div class="node">Dario Machado - Country Manager</div>
+                </details>
+                <details>
+                    <summary>IT Area</summary>
+                    <div class="node">Matias de Zan - IT Planning</div>
+                </details>
+            </div>
+        </details>
+    </div>
+</body>
+</html>
