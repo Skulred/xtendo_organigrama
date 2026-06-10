@@ -20,6 +20,7 @@
 
         <!-- NIVEL 2: Diego, Áreas, Cristina -->
         <div class="children">
+            
             <!-- Diego Barbero -->
             <div class="node">
                 <div class="card">
@@ -30,130 +31,98 @@
                 </div>
             </div>
 
-           <!-- Áreas con toda la estructura expandible -->
-<div class="node">
-    <div class="card">
-        <h3>Áreas</h3>
-        <img src="areas.jpg" class="avatar" alt="Logo Xtendo">
-        <p>Equipo operativo</p>
-        <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
-    </div>
-    <div class="children hidden">
-        
-        <!-- Brazil Sales Team -->
-        <div class="node">
-            <div class="card">
-                <h4>Brazil Sales Team</h4>
-                <p>Country Manager Brasil</p>
-                <div class="tag bg-sales">Dario Macfarlane</div>
-            </div>
-        </div>
+            <!-- Áreas con grid estable -->
+            <div class="node areas-node">
+                <div class="card">
+                    <h3>Áreas</h3>
+                    <img src="areas.jpg" class="avatar" alt="Logo Xtendo">
+                    <p>Equipo operativo</p>
+                    <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
+                </div>
+                <div class="children areas-grid hidden">
+                    
+                    <div class="subcard">
+                        <h4>Country Manager Brasil</h4>
+                        <p>Dario Macfarlane</p>
+                        <div class="tag bg-sales">Dirección Brasil</div>
+                    </div>
 
-        <!-- R&D Brazil -->
-        <div class="node">
-            <div class="card">
-                <h4>R&D Brazil</h4>
-                <p>R&D in Year 1 Month 12</p>
-                <div class="tag bg-tech">Investigación</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>R&D in Year 1 Month 12</h4>
+                        <p>Investigación</p>
+                        <div class="tag bg-tech">R&D</div>
+                    </div>
 
-        <!-- Consultant on Extranet Brasil -->
-        <div class="node">
-            <div class="card">
-                <h4>Consultant on Extranet Brasil</h4>
-                <p>Luis Terra</p>
-                <div class="tag bg-support">Consultoría</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Luis Terra</h4>
+                        <p>Innovation</p>
+                        <div class="tag bg-marketing">Innovación</div>
+                    </div>
 
-        <!-- Strategic Planning & Business Innovation -->
-        <div class="node">
-            <div class="card">
-                <h4>Strategic Planning & Business Innovation</h4>
-                <p>Brazil Sales Team</p>
-                <div class="tag bg-dir">Innovación</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Brazil Sales Team</h4>
+                        <p>Innovación</p>
+                        <div class="tag bg-sales">Ventas Brasil</div>
+                    </div>
 
-        <!-- Innovation Team (con subequipo) -->
-        <div class="node">
-            <div class="card">
-                <h4>Innovation Team</h4>
-                <p>Data Analyst Innovation Practice Manager Bilingual</p>
-                <div class="tag bg-marketing">Dario Macfarlane</div>
-                <button onclick="toggleTeam(this)">▼ Subequipo</button>
-            </div>
-            <div class="children hidden">
-                <div class="node"><div class="card"><h5>Data Analyst</h5><p>Innovation Practice Manager Bilingual</p><div class="tag bg-tech">Dario Macfarlane</div></div></div>
-            </div>
-        </div>
+                    <div class="subcard expandible">
+                        <h4>Data Analyst Innovation Practice Manager Bilingual</h4>
+                        <p>Dario Macfarlane</p>
+                        <div class="tag bg-tech">Data</div>
+                        <button onclick="toggleSubteam(this)">▼ Subequipo</button>
+                        <div class="children-sub hidden">
+                            <div class="subsubcard">
+                                <h5>Equipo de Innovación</h5>
+                                <p>Analista de Datos</p>
+                                <div class="tag bg-tech">Dario</div>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Customer Automation & Compliance (John) -->
-        <div class="node">
-            <div class="card">
-                <h4>Customer Automation & Compliance</h4>
-                <p>John Castañón</p>
-                <div class="tag bg-tech">Automatización</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Customer Automation & Compliance</h4>
+                        <p>John Castañón</p>
+                        <div class="tag bg-tech">Automatización</div>
+                    </div>
 
-        <!-- Customer Automation & Compliance (Dario) -->
-        <div class="node">
-            <div class="card">
-                <h4>Customer Automation & Compliance</h4>
-                <p>Dario Macfarlane</p>
-                <div class="tag bg-tech">Cumplimiento</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Customer Automation & Compliance</h4>
+                        <p>Dario Macfarlane</p>
+                        <div class="tag bg-tech">Cumplimiento</div>
+                    </div>
 
-        <!-- Business Solutions & Alliance Team -->
-        <div class="node">
-            <div class="card">
-                <h4>Business Solutions & Alliance Team</h4>
-                <p>Business Solutions & Alliance Manager</p>
-                <div class="tag bg-dir">Dario Macfarlane</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Business Solutions & Alliance Team</h4>
+                        <p>Business Solutions & Alliance Manager</p>
+                        <div class="tag bg-dir">Dario Macfarlane</div>
+                    </div>
 
-        <!-- Business Consulting Manager -->
-        <div class="node">
-            <div class="card">
-                <h4>Business Consulting Manager</h4>
-                <p>Business Consulting Manager</p>
-                <div class="tag bg-dir">Dario Macfarlane</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Business Consulting Manager</h4>
+                        <p>Business Consulting Manager</p>
+                        <div class="tag bg-dir">Dario Macfarlane</div>
+                    </div>
 
-        <!-- Operational Excellence Management -->
-        <div class="node">
-            <div class="card">
-                <h4>Operational Excellence Management</h4>
-                <p>CX & Contact Center Operations</p>
-                <div class="tag bg-support">Dario Macfarlane</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>Operational Excellence Management</h4>
+                        <p>CX & Contact Center Operations</p>
+                        <div class="tag bg-support">Operaciones</div>
+                    </div>
 
-        <!-- CX & Contact Center Operations (primer bloque) -->
-        <div class="node">
-            <div class="card">
-                <h4>CX & Contact Center Operations</h4>
-                <p>CX & Contact Center Operations</p>
-                <div class="tag bg-support">Dario Macfarlane</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>CX & Contact Center Operations</h4>
+                        <p>CX & Contact Center Operations</p>
+                        <div class="tag bg-support">CX</div>
+                    </div>
 
-        <!-- CX Contact Center Operations -->
-        <div class="node">
-            <div class="card">
-                <h4>CX Contact Center Operations</h4>
-                <p>CX & Contact Center Operations</p>
-                <div class="tag bg-support">Dario Macfarlane</div>
-            </div>
-        </div>
+                    <div class="subcard">
+                        <h4>CX Contact Center Operations</h4>
+                        <p>CX & Contact Center Operations</p>
+                        <div class="tag bg-support">Contact Center</div>
+                    </div>
 
-    </div>
-</div>
+                </div>
+            </div>
 
             <!-- Cristina Muriel con equipo expandible -->
             <div class="node">
@@ -171,6 +140,7 @@
                     <div class="node"><div class="card"><h4>SDR 2 Global</h4><p>TBH</p></div></div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
