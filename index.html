@@ -8,13 +8,15 @@
 </head>
 <body>
 
-    
+    <h1>Estructura Organizacional</h1>
 
     <div class="org-tree">
         <div class="node">
             <div class="card">
+                <img src="martin.jpg" class="avatar" alt="Martín Barbero">
                 <h2>Martín Barbero</h2>
                 <p>CEO & FOUNDER</p>
+                <div class="tag bg-dir">Dirección</div>
                 <button onclick="toggleTeam(this)">▲ Contraer equipo</button>
             </div>
 
@@ -22,15 +24,19 @@
                 
                 <div class="node">
                     <div class="card">
+                        <img src="diego.jpg" class="avatar" alt="Diego Barbero">
                         <h3>Diego Barbero</h3>
                         <p>VP Business Dev</p>
+                        <div class="tag bg-dir">Dirección</div>
                     </div>
                 </div>
 
                 <div class="node">
                     <div class="card">
+                        <img src="cristina.jpg" class="avatar" alt="Cristina Muriel">
                         <h3>Cristina Muriel</h3>
                         <p>VP Global Growth</p>
+                        <div class="tag bg-dir">Dirección</div>
                     </div>
                 </div>
 
@@ -40,16 +46,24 @@
                         <p>Equipo operativo</p>
                         <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
                     </div>
+                    
                     <div class="children hidden">
                         <div class="node">
-                            <div class="card"><h4>Tecnología</h4><p>Equipo IT</p></div>
+                            <div class="card">
+                                <h4>Tecnología</h4>
+                                <p>Equipo IT</p>
+                                <div class="tag bg-tech">Tecnología</div>
+                            </div>
                         </div>
                         <div class="node">
-                            <div class="card"><h4>Ventas</h4><p>Equipo Comercial</p></div>
+                            <div class="card">
+                                <h4>Ventas</h4>
+                                <p>Equipo Comercial</p>
+                                <div class="tag bg-sales">Ventas</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
