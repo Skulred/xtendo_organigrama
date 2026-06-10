@@ -1,4 +1,4 @@
-graph TD
+```mermaidgraph TD
     %% Nivel Principal
     CEO["Martin Barbero<br/>CEO & FOUNDER"]
 
@@ -28,3 +28,4 @@ graph TD
     style BR_SALES fill:#2c5e8a,stroke:#fff,color:#fff
     style IT_AREA fill:#2c5e8a,stroke:#fff,color:#fff
     style FINANCE fill:#2c5e8a,stroke:#fff,color:#fff
+
