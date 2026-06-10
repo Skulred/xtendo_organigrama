@@ -1,32 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        /* Estilos base */
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 12px; margin: 10px; width: 250px; background: white; }
-        .hidden { display: none; }
-        .toggle-btn { cursor: pointer; color: blue; font-size: 0.8em; text-decoration: underline; }
-    </style>
-</head>
-<body>
+<div class="org-tree">
 
-<div class="card">
-    <h3>María González</h3>
-    <p>Dirección</p>
-    <span class="toggle-btn" onclick="toggleTeam(this)">▲ Contraer equipo</span>
-    <div class="team-container">
-        <p>Equipo de RRHH...</p>
+    <!-- NIVEL 1 -->
+    <div class="node">
+
+        <div class="card">
+            <h3>María González</h3>
+            <p>Directora General</p>
+
+            <button onclick="toggleTeam(this)">
+                ▼ Expandir equipo
+            </button>
+        </div>
+
+        <!-- NIVEL 2 -->
+        <div class="children hidden">
+
+            <div class="node">
+                <div class="card">
+                    <h3>Laura Fernández</h3>
+                    <p>Directora Tecnología</p>
+                </div>
+            </div>
+
+            <div class="node">
+                <div class="card">
+                    <h3>Roberto Jiménez</h3>
+                    <p>Director Ventas</p>
+                </div>
+            </div>
+
+            <div class="node">
+                <div class="card">
+                    <h3>Carlos Ruiz</h3>
+                    <p>Director RRHH</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
 </div>
-
-<script>
-    function toggleTeam(element) {
-        const container = element.nextElementSibling;
-        container.classList.toggle('hidden');
-        element.innerText = container.classList.contains('hidden') ? "▼ Expandir equipo" : "▲ Contraer equipo";
-    }
-</script>
-
-</body>
-</html>
