@@ -171,3 +171,6 @@ button:hover {
         max-width: 260px;
     }
 }
+.bg-marketing { background-color: #e11d48; }
+.bg-support { background-color: #0891b2; }
+.bg-sales { background-color: #22c55e; }
