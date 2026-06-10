@@ -1,43 +1,121 @@
-<div class="org-tree">
+<!DOCTYPE html>
+<html lang="es">
 
-    <!-- NIVEL 1 -->
-    <div class="node">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organigrama</title>
 
-        <div class="card">
-            <h3>María González</h3>
-            <p>Directora General</p>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-            <button onclick="toggleTeam(this)">
-                ▼ Expandir equipo
-            </button>
-        </div>
+<body>
 
-        <!-- NIVEL 2 -->
-        <div class="children hidden">
+    <h1>Estructura Organizacional</h1>
 
-            <div class="node">
-                <div class="card">
-                    <h3>Laura Fernández</h3>
-                    <p>Directora Tecnología</p>
-                </div>
+    <div class="org-tree">
+
+        <!-- CEO -->
+        <div class="node">
+
+            <div class="card">
+                <h2>María González</h2>
+                <p>Directora General</p>
+
+                <button onclick="toggleTeam(this)">
+                    ▼ Expandir equipo
+                </button>
             </div>
 
-            <div class="node">
-                <div class="card">
-                    <h3>Roberto Jiménez</h3>
-                    <p>Director Ventas</p>
-                </div>
-            </div>
+            <!-- NIVEL 2 -->
+            <div class="children hidden">
 
-            <div class="node">
-                <div class="card">
-                    <h3>Carlos Ruiz</h3>
-                    <p>Director RRHH</p>
+                <!-- Tecnología -->
+                <div class="node">
+
+                    <div class="card">
+                        <h3>Laura Fernández</h3>
+                        <p>Directora de Tecnología</p>
+
+                        <button onclick="toggleTeam(this)">
+                            ▼ Expandir equipo
+                        </button>
+                    </div>
+
+                    <!-- NIVEL 3 -->
+                    <div class="children hidden">
+
+                        <div class="node">
+                            <div class="card">
+                                <h4>Ana Torres</h4>
+                                <p>Líder Desarrollo</p>
+                            </div>
+                        </div>
+
+                        <div class="node">
+                            <div class="card">
+                                <h4>Pedro Gómez</h4>
+                                <p>Líder Infraestructura</p>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
+
+                <!-- Ventas -->
+                <div class="node">
+
+                    <div class="card">
+                        <h3>Roberto Jiménez</h3>
+                        <p>Director de Ventas</p>
+
+                        <button onclick="toggleTeam(this)">
+                            ▼ Expandir equipo
+                        </button>
+                    </div>
+
+                    <!-- NIVEL 3 -->
+                    <div class="children hidden">
+
+                        <div class="node">
+                            <div class="card">
+                                <h4>Juan Pérez</h4>
+                                <p>Supervisor Comercial</p>
+                            </div>
+                        </div>
+
+                        <div class="node">
+                            <div class="card">
+                                <h4>Sofía Díaz</h4>
+                                <p>Ejecutiva Comercial</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RRHH -->
+                <div class="node">
+
+                    <div class="card">
+                        <h3>Carlos Ruiz</h3>
+                        <p>Director RRHH</p>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-</div>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
