@@ -3,24 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 50px; }
-        .card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 250px; text-align: center; margin: 10px; }
-        .avatar { width: 80px; height: 80px; border-radius: 50%; background: #ddd; margin-bottom: 10px; }
-        .tag { display: inline-block; padding: 5px 15px; border-radius: 20px; color: white; font-size: 0.8em; margin-top: 10px; }
-        .btn-toggle { cursor: pointer; color: #666; font-size: 0.8em; margin-top: 10px; display: block; }
-        /* Colores según tu Figma */
-        .dir { background: #9b59b6; } .hr { background: #3498db; } .tech { background: #9b59b6; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; padding: 40px; display: flex; justify-content: center; }
+        
+        /* Contenedor principal para organizar las tarjetas */
+        .org-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+
+        /* Estilo de la tarjeta - el corazón del diseño */
+        .card { 
+            background: white; 
+            border-radius: 16px; 
+            padding: 24px; 
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); 
+            width: 220px; 
+            text-align: center; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15); }
+
+        .avatar { width: 70px; height: 70px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 15px; }
+        
+        h3 { margin: 0; color: #1e293b; font-size: 1.1em; }
+        p { color: #64748b; font-size: 0.9em; margin: 5px 0 15px; }
+
+        .tag { 
+            display: inline-block; padding: 6px 16px; border-radius: 50px; 
+            color: white; font-size: 0.75em; font-weight: 600; text-transform: uppercase;
+        }
+
+        /* Colores temáticos */
+        .dir { background: #9333ea; } /* Morado */
+        .hr { background: #3b82f6; }  /* Azul */
+        .sales { background: #22c55e; } /* Verde */
     </style>
 </head>
 <body>
 
+<div class="org-container">
+    <!-- Ejemplo de tarjeta -->
     <div class="card">
         <div class="avatar"></div>
         <h3>María González</h3>
         <p>Directora General</p>
         <div class="tag dir">Dirección</div>
-        <span class="btn-toggle">▲ Contraer equipo</span>
     </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <h3>Carlos Martínez</h3>
+        <p>Director de RRHH</p>
+        <div class="tag hr">RRHH</div>
+    </div>
+</div>
 
 </body>
 </html>
