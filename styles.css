@@ -1,106 +1,72 @@
+/* Contenedor principal de tarjetas */
 .node {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 250px; /* Ancho fijo igual a tu .card */
+    width: 250px;
+    margin-bottom: 20px; /* Espacio extra para que no se pisen */
 }
 
+/* Contenedor de hijos: Ajustado para no empujar a los hermanos */
 .children {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 60px;
+    margin-top: 30px;
+    position: absolute; /* Esto permite que los hijos floten sobre el resto */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content; /* Se ajusta a lo que contenga */
+    align-items: flex-start;
+}
+
+/* Solo para el nivel raíz: mantenemos el flujo normal */
+.org-tree > .node > .children {
     position: relative;
-    /* Esto evita que al crecer uno, los otros cambien su posición vertical */
-    align-items: flex-start; 
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 60px;
 }
 
 .children.hidden {
     display: none;
 }
 
-.children::before{
-    content:'';
-    position:absolute;
-    top:-30px;
-    left:50%;
-    width:2px;
-    height:30px;
-    background:#d1d5db;
+/* Conectores visuales */
+.children::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: #d1d5db;
 }
 
-.children::after{
-    content:'';
-    position:absolute;
-    top:-30px;
-    left:15%;
-    width:70%;
-    height:2px;
-    background:#d1d5db;
+.card {
+    width: 250px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 2; /* Asegura que la tarjeta esté encima */
 }
 
-.children .node::before{
-    content:'';
-    position:absolute;
-    top:-30px;
-    width:2px;
-    height:30px;
-    background:#d1d5db;
-}
-
-.card{
-    width:250px;
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card h2,
-.card h3,
-.card h4{
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-button{
-    border:none;
-    background:#7c3aed;
-    color:white;
-    padding:10px 18px;
-    border-radius:20px;
-    cursor:pointer;
-}
-/* Estilo de la foto circular */
-.avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid #f8fafc;
-}
-
-/* Colores para las etiquetas de cada área */
-.tag {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
+/* Botones y Avatares */
+button {
+    border: none;
+    background: #7c3aed;
     color: white;
-    font-size: 0.75rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
 }
-/* Avatar circular */
+
 .avatar {
     width: 80px;
     height: 80px;
@@ -108,10 +74,9 @@ button{
     object-fit: cover;
     margin: 0 auto 10px;
     display: block;
-    background: #e5e7eb; /* Color gris si no hay foto */
+    background: #e5e7eb;
 }
 
-/* Etiquetas de color */
 .tag {
     display: inline-block;
     padding: 4px 12px;
@@ -121,13 +86,11 @@ button{
     margin-bottom: 10px;
     text-transform: uppercase;
 }
+
+/* Colores */
 .bg-dir { background-color: #9333ea; }
+.bg-hr { background-color: #3b82f6; }
 .bg-tech { background-color: #0ea5e9; }
 .bg-sales { background-color: #22c55e; }
-
-.bg-dir { background-color: #9333ea; } /* Morado */
-.bg-hr { background-color: #3b82f6; } /* Azul */
-.bg-tech { background-color: #0ea5e9; } /* Azul claro */
-.bg-sales { background-color: #22c55e; } /* Verde */
-.bg-marketing { background-color: #e11d48; } /* Fucsia */
-.bg-support { background-color: #0891b2; } /* Turquesa */
+.bg-marketing { background-color: #e11d48; }
+.bg-support { background-color: #0891b2; }
