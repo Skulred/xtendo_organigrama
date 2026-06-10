@@ -98,6 +98,30 @@ button{
     margin-bottom: 10px;
     text-transform: uppercase;
 }
+/* Avatar circular */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    display: block;
+    background: #e5e7eb; /* Color gris si no hay foto */
+}
+
+/* Etiquetas de color */
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.bg-dir { background-color: #9333ea; }
+.bg-tech { background-color: #0ea5e9; }
+.bg-sales { background-color: #22c55e; }
 
 .bg-dir { background-color: #9333ea; } /* Morado */
 .bg-hr { background-color: #3b82f6; } /* Azul */
