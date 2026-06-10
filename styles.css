@@ -1,21 +1,23 @@
-
-.node{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    position:relative;
+.node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 250px; /* Ancho fijo igual a tu .card */
 }
 
-.children{
-    display:flex;
-    justify-content:center;
-    gap:80px;
-    margin-top:60px;
-    position:relative;
+.children {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    position: relative;
+    /* Esto evita que al crecer uno, los otros cambien su posición vertical */
+    align-items: flex-start; 
 }
 
-.children.hidden{
-    display:none;
+.children.hidden {
+    display: none;
 }
 
 .children::before{
