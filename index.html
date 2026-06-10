@@ -1,55 +1,59 @@
-<div class="org-tree">
-    <div class="node">
-        <div class="card">
-            <img src="martin.jpg" class="avatar" alt="Martin Barbero">
-            <h2>Martin Barbero</h2>
-            <p>CEO & FOUNDER</p>
-            <div class="tag dir">Dirección</div>
-            <button onclick="toggleTeam(this)">▲ Contraer equipo</button>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organigrama Xtendo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        <div class="children">
-            
-            <div class="node">
-                <div class="card">
-                    <img src="diego.jpg" class="avatar">
-                    <h3>Diego Barbero</h3>
-                    <p>VP Business Dev</p>
-                    <div class="tag dir">Dirección</div>
-                </div>
+    <h1>Organigrama Xtendo</h1>
+
+    <div class="org-tree">
+        <div class="node">
+            <div class="card">
+                <h2>Martín Barbero</h2>
+                <p>CEO & FOUNDER</p>
+                <button onclick="toggleTeam(this)">▲ Contraer equipo</button>
             </div>
 
-            <div class="node">
-                <div class="card">
-                    <img src="cristina.jpg" class="avatar">
-                    <h3>Cristina Muriel</h3>
-                    <p>VP Global Growth</p>
-                    <div class="tag dir">Dirección</div>
-                </div>
-            </div>
-
-            <div class="node">
-                <div class="card">
-                    <h3>Áreas</h3>
-                    <p>Equipo operativo</p>
-                    <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
-                </div>
-                <div class="children" style="display:none;">
-                    <div class="node">
-                        <div class="card">
-                            <h4>Tecnología</h4>
-                            <p>Nombre Apellido</p>
-                        </div>
-                    </div>
-                    <div class="node">
-                        <div class="card">
-                            <h4>Ventas</h4>
-                            <p>Nombre Apellido</p>
-                        </div>
+            <div class="children">
+                
+                <div class="node">
+                    <div class="card">
+                        <h3>Diego Barbero</h3>
+                        <p>VP Business Dev</p>
                     </div>
                 </div>
-            </div>
 
+                <div class="node">
+                    <div class="card">
+                        <h3>Cristina Muriel</h3>
+                        <p>VP Global Growth</p>
+                    </div>
+                </div>
+
+                <div class="node">
+                    <div class="card">
+                        <h3>Áreas</h3>
+                        <p>Equipo operativo</p>
+                        <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
+                    </div>
+                    <div class="children hidden">
+                        <div class="node">
+                            <div class="card"><h4>Tecnología</h4><p>Equipo IT</p></div>
+                        </div>
+                        <div class="node">
+                            <div class="card"><h4>Ventas</h4><p>Equipo Comercial</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
