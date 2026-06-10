@@ -2,31 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Organigrama Xtendo</title>
     <style>
-        /* CSS para el efecto de abrir/cerrar */
-        body { font-family: sans-serif; background: #f4f4f9; padding: 20px; }
-        details { background: white; padding: 10px; margin: 5px; border-radius: 8px; cursor: pointer; border: 1px solid #ddd; }
-        summary { font-weight: bold; }
-        .node { margin-left: 20px; border-left: 2px solid #1a3a5a; padding-left: 10px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 50px; }
+        .card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 250px; text-align: center; margin: 10px; }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; background: #ddd; margin-bottom: 10px; }
+        .tag { display: inline-block; padding: 5px 15px; border-radius: 20px; color: white; font-size: 0.8em; margin-top: 10px; }
+        .btn-toggle { cursor: pointer; color: #666; font-size: 0.8em; margin-top: 10px; display: block; }
+        /* Colores según tu Figma */
+        .dir { background: #9b59b6; } .hr { background: #3498db; } .tech { background: #9b59b6; }
     </style>
 </head>
 <body>
-    <h1>Organigrama Xtendo</h1>
-    <div id="org-root">
-        <details>
-            <summary>Martin Barbero - CEO & FOUNDER</summary>
-            <div class="node">
-                <details>
-                    <summary>Brasil Sales Team</summary>
-                    <div class="node">Dario Machado - Country Manager</div>
-                </details>
-                <details>
-                    <summary>IT Area</summary>
-                    <div class="node">Matias de Zan - IT Planning</div>
-                </details>
-            </div>
-        </details>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <h3>María González</h3>
+        <p>Directora General</p>
+        <div class="tag dir">Dirección</div>
+        <span class="btn-toggle">▲ Contraer equipo</span>
     </div>
+
 </body>
 </html>
