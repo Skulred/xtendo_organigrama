@@ -75,3 +75,33 @@ button{
     border-radius:20px;
     cursor:pointer;
 }
+/* Estilo de la foto circular */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #f8fafc;
+}
+
+/* Colores para las etiquetas de cada área */
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.bg-dir { background-color: #9333ea; } /* Morado */
+.bg-hr { background-color: #3b82f6; } /* Azul */
+.bg-tech { background-color: #0ea5e9; } /* Azul claro */
+.bg-sales { background-color: #22c55e; } /* Verde */
+.bg-marketing { background-color: #e11d48; } /* Fucsia */
+.bg-support { background-color: #0891b2; } /* Turquesa */
