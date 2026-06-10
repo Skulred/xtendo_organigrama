@@ -1,4 +1,4 @@
-```mermaidgraph TD
+graph TD
     %% Nivel Principal
     CEO["Martin Barbero<br/>CEO & FOUNDER"]
 
