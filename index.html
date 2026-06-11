@@ -3,144 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organigrama Xtendo</title>
+    <title>Xtendo - Organigrama Global 2026</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="org-tree">
-    <!-- NIVEL 1: CEO -->
-    <div class="node root">
-        <div class="card">
-            <img src="martin.jpg" class="avatar" alt="Martín Barbero">
-            <h2>Martín Barbero</h2>
-            <p>CEO & FOUNDER</p>
-            <button onclick="toggleTeam(this)">▲ Contraer equipo</button>
-        </div>
-
-        <!-- NIVEL 2: Diego, Áreas, Cristina -->
-        <div class="children">
-            
-            <!-- Diego Barbero -->
-            <div class="node">
-                <div class="card">
-                    <img src="diego.jpg" class="avatar" alt="Diego Barbero">
-                    <h3>Diego Barbero</h3>
-                    <p>VP Business Dev</p>
-                    <div class="tag bg-dir">Dirección</div>
-                </div>
+<div class="org-wrapper">
+    <div class="org-tree">
+        <!-- NIVEL 1: CEO -->
+        <div class="node">
+            <div class="card ceo">
+                <div class="avatar">MB</div>
+                <h2>Martin Barbero</h2>
+                <p>CEO & FOUNDER</p>
+                <div class="tag bg-dir">Executive Org Chart</div>
             </div>
 
-            <!-- Áreas con grid estable -->
-            <div class="node areas-node">
-                <div class="card">
-                    <h3>Áreas</h3>
-                    <img src="areas.jpg" class="avatar" alt="Logo Xtendo">
-                    <p>Equipo operativo</p>
-                    <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
+            <!-- NIVEL 2: Diego, Cristina y Áreas en GRID -->
+            <div class="level2-grid">
+                <!-- Diego Barbero (SIN EQUIPO) -->
+                <div class="node">
+                    <div class="card director">
+                        <div class="avatar">DB</div>
+                        <h3>Diego Barbero</h3>
+                        <p>Brazil & Bolivia Partner</p>
+                        <p>VP Business Development</p>
+                        <div class="tag bg-dir">Dirección</div>
+                    </div>
                 </div>
-                <div class="children areas-grid hidden">
-                    
-                    <div class="subcard">
-                        <h4>Country Manager Brasil</h4>
-                        <p>Dario Macfarlane</p>
-                        <div class="tag bg-sales">Dirección Brasil</div>
-                    </div>
 
-                    <div class="subcard">
-                        <h4>R&D in Year 1 Month 12</h4>
-                        <p>Investigación</p>
-                        <div class="tag bg-tech">R&D</div>
+                <!-- Christina Muriel (CON EQUIPO) -->
+                <div class="node">
+                    <div class="card director">
+                        <div class="avatar">CM</div>
+                        <h3>Christina Muriel</h3>
+                        <p>VP Global Growth</p>
+                        <div class="tag bg-dir">Dirección</div>
+                        <button onclick="toggleTeam('cristina-team', 'areas-team')">▼ Equipos</button>
                     </div>
-
-                    <div class="subcard">
-                        <h4>Luis Terra</h4>
-                        <p>Innovation</p>
-                        <div class="tag bg-marketing">Innovación</div>
+                    <div id="cristina-team" class="team-container hidden">
+                        <div class="team-grid">
+                            <div class="member-card"><h4>BDR Global</h4><p>Jeff Alvarez</p><div class="tag bg-sales">BDR</div></div>
+                            <div class="member-card"><h4>BDR 2 Global</h4><p>TBH</p><div class="tag bg-sales">BDR</div></div>
+                            <div class="member-card"><h4>SDR 1 Global</h4><p>TBH</p><div class="tag bg-sales">SDR</div></div>
+                            <div class="member-card"><h4>SDR 2 Global</h4><p>TBH</p><div class="tag bg-sales">SDR</div></div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="subcard">
-                        <h4>Brazil Sales Team</h4>
-                        <p>Innovación</p>
-                        <div class="tag bg-sales">Ventas Brasil</div>
+                <!-- ÁREAS - EXPANDE HACIA LA IZQUIERDA -->
+                <div class="node areas-node">
+                    <div class="card">
+                        <div class="avatar">📊</div>
+                        <h3>Áreas</h3>
+                        <p>Equipos operativos</p>
+                        <button onclick="toggleTeam('areas-team', 'cristina-team')">▼ Expandir áreas</button>
                     </div>
-
-                    <div class="subcard expandible">
-                        <h4>Data Analyst Innovation Practice Manager Bilingual</h4>
-                        <p>Dario Macfarlane</p>
-                        <div class="tag bg-tech">Data</div>
-                        <button onclick="toggleSubteam(this)">▼ Subequipo</button>
-                        <div class="children-sub hidden">
-                            <div class="subsubcard">
-                                <h5>Equipo de Innovación</h5>
-                                <p>Analista de Datos</p>
-                                <div class="tag bg-tech">Dario</div>
+                    <div id="areas-team" class="team-container areas-expanded-left hidden">
+                        <div class="areas-grid">
+                            <!-- 1. Brazil Sales Team -->
+                            <div class="subcard">
+                                <h4>🇧🇷 Brazil Sales Team</h4>
+                                <p>Country Manager Brasil</p>
+                                <div class="tag bg-sales">Dario Machado</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">BDR 1 Brasil: TBH</div>
+                                    <div class="submember">Consultor Estrategia: Luiz Terra</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 2. PEYA Operations Team -->
+                            <div class="subcard">
+                                <h4>⚙️ PEYA Operations Team</h4>
+                                <p>CMO PeYa</p>
+                                <div class="tag bg-operations">Matias de Zan</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">WFM Senior Manager: Jessica Mendoza</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 3. Tigo Operations Team -->
+                            <div class="subcard">
+                                <h4>📡 Tigo Operations Team</h4>
+                                <p>Director de Operaciones</p>
+                                <div class="tag bg-operations">Oscar Notto</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Office Manager Bolivia: Aida Rivero</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 4. IT Area -->
+                            <div class="subcard">
+                                <h4>💻 IT Area</h4>
+                                <p>IT Planning</p>
+                                <div class="tag bg-tech">Matias de Zan</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Servicio IT Servers: Wims</div>
+                                    <div class="submember">Servicio IT Desktops: Wims</div>
+                                    <div class="submember">Certificación ISO: Asmeth Montes</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 5. Internal Auditing -->
+                            <div class="subcard">
+                                <h4>🔍 Internal Auditing</h4>
+                                <p>Controller General</p>
+                                <div class="tag bg-audit">TBH</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Auditing Lead: Jazmin Acevedo</div>
+                                    <div class="submember">Auditing Systems: Abel Rodas</div>
+                                    <div class="submember">Senior Payroll: Diana Cardona</div>
+                                    <div class="submember">Payroll System: Oscar Notto/Jazmin/Abel</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 6. Finance -->
+                            <div class="subcard">
+                                <h4>💰 Finance</h4>
+                                <p>Finance Lead</p>
+                                <div class="tag bg-finance">Celina Pacheco</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Corporate Economics: Abel Rodas</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 7. Administration Area -->
+                            <div class="subcard">
+                                <h4>📋 Administration Area</h4>
+                                <p>Admin Manager</p>
+                                <div class="tag bg-admin">Verónica Rodriguez</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Admin & Accounting: Jazmin Acevedo</div>
+                                    <div class="submember">Purchasing Executive: TBH</div>
+                                    <div class="submember">Procurement: Jose Ozorio</div>
+                                    <div class="submember">Contractor Agreements: Fernanda Barbero</div>
+                                    <div class="submember">Taxing Reporting: John Castaño</div>
+                                    <div class="submember">Internal Events: Specialists</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 8. Innovation Team -->
+                            <div class="subcard">
+                                <h4>💡 Innovation Team</h4>
+                                <p>Data Architect</p>
+                                <div class="tag bg-tech">Nicolas Leguizamón</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Customer Operations: John Castaño</div>
+                                    <div class="submember">Customer Automatizations: Ignacio Berdiña</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 9. Business Solutions & Alliances -->
+                            <div class="subcard">
+                                <h4>🤝 Business Solutions & Alliances</h4>
+                                <p>Alliance Manager</p>
+                                <div class="tag bg-tech">Nicolas Leguizamón</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Automatizaciones: Frontline</div>
+                                    <div class="submember">Tech Partners: Cloudtalk/Mitrol/S1</div>
+                                    <div class="submember">Commercial Agreements: TBH</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 10. Business Consulting -->
+                            <div class="subcard">
+                                <h4>📊 Business Consulting</h4>
+                                <p>Consulting Manager</p>
+                                <div class="tag bg-consulting">Gonzalo Soto</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Operational Excellence: Claudia Fagundez</div>
+                                    <div class="submember">CX Consultant: Patricia Fracaroli</div>
+                                    <div class="submember">CX Consultant: Rodrigo Masjoan</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 11. Growth Marketing Team -->
+                            <div class="subcard">
+                                <h4>📢 Growth Marketing Team</h4>
+                                <p>Marketing Operations Lead</p>
+                                <div class="tag bg-marketing">TBH</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">CRM & Automation: Leidy Castiblanco</div>
+                                    <div class="submember">Content Strategy: ViaNews</div>
+                                    <div class="submember">PR & Comm: TBH</div>
+                                    <div class="submember">Webmaster: José Luis Rios/Wims</div>
+                                    <div class="submember">Creative Design: Javier Borbon</div>
+                                    <div class="submember">Creative Design 2: TBH</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 12. Customer Success -->
+                            <div class="subcard">
+                                <h4>⭐ Customer Success</h4>
+                                <p>Customer Success Director</p>
+                                <div class="tag bg-success">Deicy Martinez</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">CS Management: Gonzalo Soto</div>
+                                    <div class="submember">CS Management: Brahyam Lopez</div>
+                                    <div class="submember">CS Management: Sheryl Villanueva</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 13. Human Capital Team -->
+                            <div class="subcard">
+                                <h4>👥 Human Capital Team</h4>
+                                <p>Global Talent Manager</p>
+                                <div class="tag bg-hr">TBH</div>
+                                <button onclick="toggleSubteam(this)">▼ Equipo</button>
+                                <div class="subteam hidden">
+                                    <div class="submember">Talent Retention: Angelica Ballesteros</div>
+                                    <div class="submember">Headhunting Latam: Grow Solutions</div>
+                                    <div class="submember">Headhunting Brasil: Adecco</div>
+                                    <div class="submember">Headhunting Europa: Hays PLC</div>
+                                    <div class="submember">HR BP Headhunting: TBH</div>
+                                    <div class="submember">HR Analyst 1: Paola Mateus</div>
+                                    <div class="submember">HR Analyst 2: Angie Angarita</div>
+                                    <div class="submember">HR Analyst 3: Eliana Ochoa</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="subcard">
-                        <h4>Customer Automation & Compliance</h4>
-                        <p>John Castañón</p>
-                        <div class="tag bg-tech">Automatización</div>
-                    </div>
-
-                    <div class="subcard">
-                        <h4>Customer Automation & Compliance</h4>
-                        <p>Dario Macfarlane</p>
-                        <div class="tag bg-tech">Cumplimiento</div>
-                    </div>
-
-                    <div class="subcard">
-                        <h4>Business Solutions & Alliance Team</h4>
-                        <p>Business Solutions & Alliance Manager</p>
-                        <div class="tag bg-dir">Dario Macfarlane</div>
-                    </div>
-
-                    <div class="subcard">
-                        <h4>Business Consulting Manager</h4>
-                        <p>Business Consulting Manager</p>
-                        <div class="tag bg-dir">Dario Macfarlane</div>
-                    </div>
-
-                    <div class="subcard">
-                        <h4>Operational Excellence Management</h4>
-                        <p>CX & Contact Center Operations</p>
-                        <div class="tag bg-support">Operaciones</div>
-                    </div>
-
-                    <div class="subcard">
-                        <h4>CX & Contact Center Operations</h4>
-                        <p>CX & Contact Center Operations</p>
-                        <div class="tag bg-support">CX</div>
-                    </div>
-
-                    <div class="subcard">
-                        <h4>CX Contact Center Operations</h4>
-                        <p>CX & Contact Center Operations</p>
-                        <div class="tag bg-support">Contact Center</div>
-                    </div>
-
                 </div>
             </div>
-
-            <!-- Cristina Muriel con equipo expandible -->
-            <div class="node">
-                <div class="card">
-                    <img src="cristina.jpg" class="avatar" alt="Cristina Muriel">
-                    <h3>Cristina Muriel</h3>
-                    <p>VP Global Growth</p>
-                    <div class="tag bg-dir">Dirección</div>
-                    <button onclick="toggleTeam(this)">▼ Expandir equipo</button>
-                </div>
-                <div class="children hidden">
-                    <div class="node"><div class="card"><h4>BDR 1 Global</h4><p>Jeff Alvarez</p></div></div>
-                    <div class="node"><div class="card"><h4>BDR 2 Global</h4><p>TBH</p></div></div>
-                    <div class="node"><div class="card"><h4>SDR 1 Global</h4><p>TBH</p></div></div>
-                    <div class="node"><div class="card"><h4>SDR 2 Global</h4><p>TBH</p></div></div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
