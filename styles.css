@@ -8,48 +8,49 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
     min-height: 100vh;
-    padding: 40px 20px;
+    padding: 40px;
 }
 
-.org-wrapper {
-    overflow-x: auto;
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 24px;
-    padding: 40px 30px;
+    padding: 40px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
 }
 
-.org-tree {
+/* NIVEL 1 */
+.level-1 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* NIVEL 2: GRID FIJO */
-.level2-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    gap: 40px;
     justify-content: center;
-    margin-top: 50px;
-    position: relative;
+    margin-bottom: 20px;
 }
 
-.level2-grid::before {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: 50%;
+/* Línea conectora */
+.line {
     width: 2px;
-    height: 25px;
+    height: 40px;
     background: #cbd5e1;
-    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+/* NIVEL 2 - Flexbox horizontal */
+.level-2 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    align-items: flex-start;
 }
 
 .node {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 280px;
 }
 
 /* Tarjetas */
@@ -57,27 +58,20 @@ body {
     width: 100%;
     background: white;
     border-radius: 20px;
-    padding: 20px 15px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-    border: 1px solid #e5e7eb;
+    transition: transform 0.2s;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card.ceo {
     background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
     color: white;
-    border: none;
     width: 320px;
-}
-
-.card.ceo p, .card.ceo .title {
-    color: #e2e8f0;
 }
 
 .card.director {
@@ -90,68 +84,36 @@ body {
     height: 70px;
     border-radius: 50%;
     margin: 0 auto 12px;
+    background: rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e2e8f0;
-    color: #1e293b;
     font-size: 24px;
     font-weight: bold;
 }
 
-.card.ceo .avatar, .card.director .avatar {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
-
-h2 {
+.name {
     font-size: 1.1rem;
-    margin-bottom: 4px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-}
-
-h4 {
-    font-size: 0.85rem;
-    color: #374151;
-    margin-bottom: 4px;
-}
-
-p {
+.title {
     font-size: 0.7rem;
-    color: #6b7280;
-    margin-bottom: 6px;
-}
-
-.card.director p {
-    color: #e2e8f0;
+    opacity: 0.85;
+    margin-bottom: 3px;
 }
 
 .tag {
     display: inline-block;
     padding: 4px 12px;
     border-radius: 30px;
-    color: white;
     font-size: 0.65rem;
     font-weight: bold;
-    margin: 8px 0 4px;
+    background: #9333ea;
+    color: white;
+    margin-top: 8px;
 }
-
-/* Colores de etiquetas */
-.bg-dir { background-color: #9333ea; }
-.bg-sales { background-color: #22c55e; }
-.bg-tech { background-color: #0ea5e9; }
-.bg-consulting { background-color: #6366f1; }
-.bg-marketing { background-color: #e11d48; }
-.bg-success { background-color: #06b6d4; }
-.bg-hr { background-color: #ec489a; }
-.bg-finance { background-color: #10b981; }
-.bg-admin { background-color: #3b82f6; }
-.bg-audit { background-color: #f59e0b; }
-.bg-operations { background-color: #f97316; }
 
 button {
     border: none;
@@ -161,7 +123,7 @@ button {
     border-radius: 30px;
     cursor: pointer;
     font-size: 0.7rem;
-    margin-top: 10px;
+    margin-top: 12px;
     transition: background 0.2s;
 }
 
@@ -169,9 +131,12 @@ button:hover {
     background: #0369a1;
 }
 
-/* Contenedores de equipos */
+/* EQUIPO DE CHRISTINA - Expandible hacia ABAJO */
 .team-container {
-    margin-top: 20px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     width: 100%;
 }
 
@@ -179,60 +144,34 @@ button:hover {
     display: none;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #e2e8f0;
-}
-
-.member-card {
+.team-card {
     background: #f8fafc;
     border-radius: 12px;
     padding: 10px;
     text-align: center;
     border: 1px solid #e2e8f0;
-    transition: all 0.2s;
-}
-
-.member-card:hover {
-    transform: translateY(-2px);
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.member-card h4 {
     font-size: 0.8rem;
 }
 
-/* Expansión de Áreas hacia la IZQUIERDA */
-.areas-node {
-    position: relative;
+/* ÁREAS - SIN position absolute, expande hacia ABAJO igual que Christina */
+.areas-container {
+    margin-top: 15px;
+    width: 100%;
+    background: transparent;
 }
 
-.areas-expanded-left {
-    position: absolute;
-    right: 100%;
-    top: 0;
-    margin-right: 20px;
-    width: max-content;
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    z-index: 10;
+.areas-container.hidden {
+    display: none;
 }
 
-/* Grid de Áreas */
 .areas-grid {
     display: grid;
-    grid-template-columns: repeat(4, 280px);
-    gap: 20px;
+    grid-template-columns: repeat(4, 260px);
+    gap: 15px;
+    margin-top: 10px;
 }
 
-.subcard {
+.area-item {
     background: #f8fafc;
     border-radius: 14px;
     padding: 12px;
@@ -241,64 +180,68 @@ button:hover {
     transition: all 0.2s;
 }
 
-.subcard:hover {
-    transform: translateY(-2px);
+.area-item:hover {
     background: white;
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.subcard h4 {
+.area-name {
+    font-weight: 600;
     font-size: 0.85rem;
+    margin-bottom: 5px;
 }
 
-.subcard p {
+.area-leader {
     font-size: 0.7rem;
+    color: #475569;
+    margin-bottom: 5px;
 }
 
-.subteam {
+.btn-sub {
+    background: #6366f1;
+    font-size: 0.65rem;
+    margin-top: 8px;
+}
+
+.sub-team {
     margin-top: 10px;
     padding-top: 8px;
     border-top: 1px dashed #cbd5e1;
 }
 
-.subteam.hidden {
+.sub-team.hidden {
     display: none;
 }
 
-.submember {
+.member {
     font-size: 0.65rem;
-    padding: 5px;
+    padding: 4px;
     color: #475569;
     background: #f1f5f9;
-    margin: 4px 0;
-    border-radius: 8px;
+    margin: 3px 0;
+    border-radius: 6px;
 }
 
 /* Responsive */
-@media (max-width: 1300px) {
-    .areas-expanded-left {
-        position: static;
-        margin-right: 0;
-        margin-top: 20px;
-        width: 100%;
+@media (max-width: 1200px) {
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .level-2 {
+        flex-direction: column;
+        align-items: center;
     }
     .areas-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 1100px) {
-    .level2-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .areas-grid {
-        grid-template-columns: 1fr;
-    }
-    .team-grid {
         grid-template-columns: 1fr;
     }
 }
