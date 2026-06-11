@@ -1,9 +1,7 @@
-// Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     
     let currentOpenTeam = null;
 
-    // Configurar botones de toggle principales
     const toggleButtons = document.querySelectorAll('.btn-toggle');
     toggleButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
@@ -13,32 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (!teamElement) return;
             
-            // Si hay otro equipo abierto, lo cerramos
             if (currentOpenTeam && currentOpenTeam !== teamElement) {
                 currentOpenTeam.classList.add('hidden');
                 const prevBtn = document.querySelector(`.btn-toggle[data-team="${currentOpenTeam.id.replace('team-', '')}"]`);
                 if (prevBtn) {
-                    if (prevBtn.innerHTML.includes('Áreas')) {
-                        prevBtn.innerHTML = '▼ Expandir áreas';
+                    if (prevBtn.innerHTML.includes('Areas')) {
+                        prevBtn.innerHTML = '▼ Expandir areas';
                     } else {
                         prevBtn.innerHTML = '▼ Ver equipos';
                     }
                 }
             }
             
-            // Toggle del equipo actual
             if (teamElement.classList.contains('hidden')) {
                 teamElement.classList.remove('hidden');
-                if (this.innerHTML.includes('Áreas')) {
-                    this.innerHTML = '▲ Contraer áreas';
+                if (this.innerHTML.includes('Areas')) {
+                    this.innerHTML = '▲ Contraer areas';
                 } else {
                     this.innerHTML = '▲ Ocultar equipos';
                 }
                 currentOpenTeam = teamElement;
             } else {
                 teamElement.classList.add('hidden');
-                if (this.innerHTML.includes('Áreas')) {
-                    this.innerHTML = '▼ Expandir áreas';
+                if (this.innerHTML.includes('Areas')) {
+                    this.innerHTML = '▼ Expandir areas';
                 } else {
                     this.innerHTML = '▼ Ver equipos';
                 }
@@ -47,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Configurar botones de subequipos
     const subButtons = document.querySelectorAll('.btn-sub');
     subButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
