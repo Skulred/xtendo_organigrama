@@ -8,7 +8,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: #0f172a;
     min-height: 100vh;
-    padding: 40px;
+    padding: 20px;
 }
 
 .container {
@@ -16,8 +16,8 @@ body {
     margin: 0 auto;
     background: #0f172a;
     border-radius: 24px;
-    padding: 40px;
-    overflow-x: auto;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
 /* NIVEL 1 */
@@ -35,26 +35,38 @@ body {
     margin: 0 auto;
 }
 
-/* NIVEL 2 */
+/* NIVEL 2 - responsive con flex-wrap */
 .level-2 {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
     margin-top: 30px;
     align-items: flex-start;
+}
+
+/* Móvil: una columna */
+@media (max-width: 768px) {
+    .level-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 }
 
 .node {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 280px;
+    min-width: 260px;
+    max-width: 100%;
 }
 
-/* Tarjetas */
+/* Tarjetas - fluidas */
 .card {
     width: 100%;
+    min-width: 260px;
+    max-width: 320px;
     background: #1e293b;
     border-radius: 20px;
     padding: 20px;
@@ -71,13 +83,20 @@ body {
 .card.ceo {
     background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
     color: white;
-    width: 320px;
     border: 1px solid #3b82f6;
 }
 
 .card.director {
     background: linear-gradient(135deg, #1e40af 0%, #1e3a5f 100%);
     color: white;
+}
+
+/* En móvil las tarjetas ocupan todo el ancho disponible */
+@media (max-width: 480px) {
+    .card {
+        min-width: 100%;
+        max-width: 100%;
+    }
 }
 
 .avatar {
@@ -94,10 +113,26 @@ body {
     color: white;
 }
 
+/* En móvil avatar más pequeño */
+@media (max-width: 480px) {
+    .avatar {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+}
+
 .name {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+/* En móvil texto más pequeño */
+@media (max-width: 480px) {
+    .name {
+        font-size: 1rem;
+    }
 }
 
 .title {
@@ -169,9 +204,23 @@ button:hover {
 
 .areas-grid {
     display: grid;
-    grid-template-columns: repeat(4, 260px);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-top: 10px;
+}
+
+/* Tablet: 2 columnas */
+@media (max-width: 1024px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil: 1 columna */
+@media (max-width: 640px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .area-item {
@@ -227,25 +276,18 @@ button:hover {
     border-radius: 6px;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-    .areas-grid {
-        grid-template-columns: repeat(3, 1fr);
+/* Ajustes para móvil muy pequeño */
+@media (max-width: 380px) {
+    body {
+        padding: 10px;
     }
-}
-
-@media (max-width: 900px) {
-    .level-2 {
-        flex-direction: column;
-        align-items: center;
+    .container {
+        padding: 15px;
     }
-    .areas-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .area-name {
+        font-size: 0.75rem;
     }
-}
-
-@media (max-width: 600px) {
-    .areas-grid {
-        grid-template-columns: 1fr;
+    .member {
+        font-size: 0.6rem;
     }
 }
